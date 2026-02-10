@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -30,6 +30,30 @@
       }
     }
   </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .nav-link {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 2px;
+    }
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: currentColor;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 250ms ease;
+    }
+    .nav-link:hover::after,
+    .nav-link:focus-visible::after {
+      transform: scaleX(1);
+    }
+  </style>
 </head>
 <body class="bg-ivory text-charcoal font-sans">
   <header class="sticky top-0 z-50 bg-ivory/90 backdrop-blur border-b border-sand">
@@ -44,10 +68,10 @@
         </div>
       </a>
       <div class="hidden md:flex items-center gap-8 text-sm">
-        <a class="hover:text-midnight transition" href="index.html">Home</a>
-        <a class="hover:text-midnight transition" href="rooms.html">Rooms</a>
-        <a class="hover:text-midnight transition" href="amenities.html">Amenities</a>
-        <a class="hover:text-midnight transition" href="index.html#testimonials">Testimonies</a>
+        <a class="nav-link hover:text-midnight transition" href="index.html">Home</a>
+        <a class="nav-link hover:text-midnight transition" href="rooms.html">Rooms</a>
+        <a class="nav-link hover:text-midnight transition" href="amenities.html">Amenities</a>
+        <a class="nav-link hover:text-midnight transition" href="index.html#testimonials">Testimonies</a>
       </div>
       <a href="booking.html" class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-midnight text-ivory hover:bg-charcoal transition shadow-soft">
         Book Now
@@ -180,10 +204,10 @@
         </div>
       </div>
     </div>
-    <div class="border-t border-ivory/10 text-center text-xs py-4 text-ivory/60">© 2026 Vtech Homes Hotel. All rights reserved.</div>
+    <div class="border-t border-ivory/10 text-center text-xs py-4 text-ivory/60">� 2026 Vtech Homes Hotel. All rights reserved.</div>
   </footer>
   <button id="backToTop" aria-label="Back to top" class="fixed bottom-6 right-6 hidden items-center justify-center w-12 h-12 rounded-full bg-midnight text-ivory shadow-soft hover:bg-charcoal transition">
-    ↑
+    ?
   </button>
   <script>
     const backToTopBtn = document.getElementById('backToTop');
@@ -203,4 +227,6 @@
     });
   </script></body>
 </html>
+
+
 
